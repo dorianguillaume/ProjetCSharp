@@ -4,7 +4,9 @@ namespace Quiz
 {
     internal class Question
     {
-        public int Id { get; }
+        //On initialise l'id
+        static private int _id = 1;
+        public int Id { get;  }
         public string Interrogation { get; }
 
         public List<string> Answers { get; }
@@ -14,11 +16,11 @@ namespace Quiz
         public Question(List<string> question)
         {
             Interrogation = question[0];
+            Answers = new List<string>();
+            Id = _id++;
 
             for (int i = 1; i < question.Count; i++)
             {
-                Id = i;
-                Answers = new List<string>();
                 //Selectionne le premier caractère de la ligne
                 if (question[i][0] == '*')
                 {

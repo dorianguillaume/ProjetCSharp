@@ -26,27 +26,33 @@ namespace Quiz
                 {
                     questions.Add(new Question(question));
                     question.Clear();
-
                 }
                 else question.Add(file[i]);
             }
+            questions.Add(new Question(question));
 
 
             return questions;
         }
 
 
-        public static List<string> GetStats()
+        public static void GetStats(out int nbGame, out double average, out List<double> percentQuestion)
         {
-            var stats = new List<string>();
-
             var file = File.ReadAllLines(STAT, Encoding.UTF8);
+            var players = new List<Player>();
 
-            for (int i = 0; i < file.Length; i++)
+            for (int i = 1; i < file.Length; i++)
             {
-                stats.Add(file[i]);
+                players.Add(new Player(file[i]));
             }
-            return stats;
+
+            nbGame = players.Count;
+
+            average = Stats.GetAverageScore(players);
+
+            percentQuestion = Stats.GetPercentQuestion(players);
+
+            
         }
 
         public static void AddStat(Player player)
@@ -54,7 +60,7 @@ namespace Quiz
             if (!File.Exists(STAT))
             {
                 //Ferme le fichier automatiquement
-                using (StreamWriter sw = File.CreateText(STAT))
+                using (StreamWriter sw = new StreamWriter(STAT))
                 {
                     sw.WriteLine("DATE\tNOM\tScore\tErreurs");
                     sw.WriteLine(player.ToString());
@@ -62,7 +68,7 @@ namespace Quiz
             }
             else
             {
-                using (StreamWriter sw = File.CreateText(STAT))
+                using (StreamWriter sw = new StreamWriter(STAT, true))
                 {
                     sw.WriteLine(player.ToString());
                 }
