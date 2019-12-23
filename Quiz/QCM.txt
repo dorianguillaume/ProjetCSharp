@@ -1,0 +1,51 @@
+Question 1 - Qu’est qu’un assembly ?
+A.	Un type particulier de collection
+B.	Un ensemble de classes dans lequel tous les noms sont uniques
+*C.	Le résultat de la compilation d’un projet (dll ou exe)
+
+Question 2 – pour passer un paramètre en out à une fonction, la variable correspondante doit être :
+A.	Déclarée et initialisée à l’intérieur de la fonction
+*B.	Déclarée à l’extérieur de la fonction et initialisée à l’intérieur de la fonction
+C.	Déclarée à l’intérieur de la fonction et initialisée à l’extérieur de la fonction
+D.	Déclarée et initialisée à l’extérieur de la fonction
+
+Question 3 – Pour lever une exception, quelle est la syntaxe correcte ?
+A.	return ArgumentOutOfRangeException ;
+B.	return new ArgumentOutOfRangeException() ;
+C.	throw ArgumentOutOfRangeException ;
+*D.	throw new ArgumentOutOfRangeException() ;
+
+Question 4 – l’instruction using permet de remplacer :
+A.	Un try…catch
+*B.	Un try…finally
+C.	Un try…catch…finally
+
+Question 5 – une instruction using n’est utile que si elle est utilisée sur une classe qui implémente :
+A.	IComparable
+*B.	IDisposable
+C.	IEnumerable
+
+Question 6 – Parmi les types suivants, lesquels sont des types référence ?
+A.	Les types numériques
+*B.	Le type string
+*C.	Les classes
+
+Question 7 – une variable de type valeur est stockée en mémoire dans :
+*A.	La pile
+B.	Le tas
+
+Question 8 – Quelle(s) ligne(s) sont correcte(s) ?
+A.	int? x = 7;   int y = x;
+*B.	int x = 7;   int? y = x;
+C.	int x = null;   int? y = x;
+
+Question 9 – la méthode ToString() est :
+*A.	Une méthode de la classe Object
+B.	Une méthode statique de la classe String
+*C.	Virtuelle
+
+Question 10 – Une variable de type énuméré :
+*A.	Représente une valeur entière
+B.	A une valeur qui est forcément une puissance de 2
+*C.	Peut contenir une combinaison de valeurs énumérées, si l’énumération est déclarée avec l’attribut [Flags]
+D.	Est toujours statique
