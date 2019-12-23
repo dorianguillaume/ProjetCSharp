@@ -6,7 +6,8 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Quiz quizzz = new Quiz();
+            quizzz.Play();
         }
     }
 }

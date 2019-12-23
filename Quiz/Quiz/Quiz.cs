@@ -111,11 +111,11 @@ namespace Quiz
             for (int i = 0; i < name.Length; i++)
             {
                 if (name[i] != 45
-                    || (name[i] < 65 && name[i] > 90)
-                    || (name[i] < 97 && name[i] > 122)
-                    || (name[i] < 129 && name[i] > 154))
+                    && (name[i] < 65 && name[i] > 90)
+                    && (name[i] < 97 && name[i] > 122)
+                    && (name[i] < 129 && name[i] > 154))
                 {
-                    throw new FormatException("Veuillez saisir votre"+type);
+                    throw new FormatException("Veuillez saisir votre "+type);
                 }
             }
         }

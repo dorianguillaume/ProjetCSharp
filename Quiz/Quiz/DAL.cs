@@ -6,9 +6,9 @@ using System.Text;
 namespace Quiz
 {
     //Data Access Layer
-    static class DAL 
+    static class DAL
     {
-        public const string QCM = @"..\..\..\QCM.txt";
+        public const string QCM = @"..\..\..\..\..\QCM.txt";
         public const string STAT = @"..\..\..\STAT.txt";
 
         public static List<Question> GetQuestions()
@@ -17,26 +17,21 @@ namespace Quiz
             var question = new List<string>();
 
             //Exception levée si le fichier n'est pas trouvé
-            try
-            {
-                var file = File.ReadAllLines(QCM, Encoding.UTF8);
 
-                for (int i = 0; i < file.Length; i++)
+            var file = File.ReadAllLines(QCM, Encoding.UTF8);
+
+            for (int i = 0; i < file.Length; i++)
+            {
+                if (file[i] == string.Empty)
                 {
-                    question.Add(file[i]);
+                    questions.Add(new Question(question));
+                    question.Clear();
 
-                    if (file[i] == "\r")
-                    {
-                        questions.Add(new Question(question));
-                        question.Clear();
-                    }
                 }
+                else question.Add(file[i]);
             }
-            catch (Exception e)
-            {
 
-                Console.WriteLine(e.Message); ;
-            }
+
             return questions;
         }
 
@@ -49,7 +44,7 @@ namespace Quiz
 
             for (int i = 0; i < file.Length; i++)
             {
-                stats.Add(file[i]);            
+                stats.Add(file[i]);
             }
             return stats;
         }
@@ -71,7 +66,7 @@ namespace Quiz
                 {
                     sw.WriteLine(player.ToString());
                 }
-            }   
+            }
         }
     }
 }

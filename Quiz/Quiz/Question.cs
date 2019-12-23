@@ -18,7 +18,7 @@ namespace Quiz
             for (int i = 1; i < question.Count; i++)
             {
                 Id = i;
-
+                Answers = new List<string>();
                 //Selectionne le premier caractère de la ligne
                 if (question[i][0] == '*')
                 {
