@@ -9,7 +9,7 @@ namespace Quiz
     static class DAL
     {
         public const string QCM = @"..\..\..\..\..\QCM.txt";
-        public const string STAT = @"..\..\..\STAT.txt";
+        public const string STAT = @"..\..\..\..\..\STAT.txt";
 
         public static List<Question> GetQuestions()
         {
