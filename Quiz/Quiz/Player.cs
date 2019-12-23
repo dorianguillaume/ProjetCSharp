@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Quiz
 {
@@ -12,7 +13,7 @@ namespace Quiz
 
         public int Score { get; set; }
 
-        public int[] Errors { get; set; }
+        public List<int> Errors { get; set; }
 
         public Player(string name, string firstname)
         {

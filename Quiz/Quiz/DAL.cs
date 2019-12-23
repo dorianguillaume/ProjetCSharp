@@ -27,7 +27,7 @@ namespace Quiz
 
                     if (file[i] == "\r")
                     {
-                        questions.Add(new Question());
+                        questions.Add(new Question(question));
                         question.Clear();
                     }
                 }
