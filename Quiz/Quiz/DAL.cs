@@ -50,8 +50,8 @@ namespace Quiz
         /// Renvoie les différents statistiques demandés en faisant appelle à la classe Stat pour les plus "complexes"
         /// </summary>
         /// <param name="nbGame">Nombre total de partie effectuée</param>
-        /// <param name="average">Score moyen de l'ensemble des joueurs sur l'ensemble des parties</param>
-        /// <param name="percentQuestion">Pourcentage de réussite sur chaque question</param>
+        /// <param name="average">Renvoie le résultat de Stats.GetAverageScore(List<Player> player)</param>
+        /// <param name="percentQuestion">Renvoie le résultat de Stats.GetPercentQuestion(List<Player> player)</param>
         public static void GetStats(out int nbGame, out double average, out List<double> percentQuestion)
         {
             var file = File.ReadAllLines(STAT, Encoding.UTF8);
