@@ -8,7 +8,9 @@ namespace Quiz
         {
             Quiz quizzz = new Quiz();
             quizzz.Play();
+
             Console.WriteLine("Veuillez saisir la touche \"q\" pour quitter le programme ");
+
             while (Console.ReadKey().Key!=ConsoleKey.Q)
             {
             }

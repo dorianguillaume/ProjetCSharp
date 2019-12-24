@@ -14,7 +14,7 @@ namespace Quiz
             return player.Average(p => p.Score);
         }        
 
-        public static List<double> GetPercentQuestion(List<Player> players)
+       public static List<double> GetPercentQuestion(List<Player> players)
         {
             int nbQuestions = players[0].Errors.Count + players[0].Score;
             List<double> percents = new List<double>();
