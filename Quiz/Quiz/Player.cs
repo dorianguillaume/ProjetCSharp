@@ -34,7 +34,7 @@ namespace Quiz
         public List<int> Errors { get; set; }
 
         /// <summary>
-        /// Constructeur --> Création d'un joueur avec nom et prénom
+        /// Constructeur --> Création d'un joueur
         /// </summary>
         /// <param name="name">string --> nom du joeur en majuscule</param>
         /// <param name="firstname">string --> prénom du joueur avec la première lettre en majuscule</param>
