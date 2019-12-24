@@ -12,6 +12,7 @@ namespace Quiz
             quizzz.Play();
 
             //Tant que la touche Q n'est pas appuyé la console ne se ferme pas
+            Console.WriteLine();
             Console.WriteLine("Veuillez saisir la touche \"q\" pour quitter le programme ");
             while (Console.ReadKey().Key!=ConsoleKey.Q)
             {

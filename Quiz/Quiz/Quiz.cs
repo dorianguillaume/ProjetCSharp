@@ -108,22 +108,24 @@ namespace Quiz
 
             while (!stats)
             {
-                Console.WriteLine("Voulez vous voir les statistiques ?");
+                Console.WriteLine("Voulez vous voir les statistiques ? (o/n)");
                 try
                 {
-                    CheckDisplayStats(Console.ReadKey().KeyChar);
-                    Console.WriteLine();
-                    DAL.GetStats(out int nbGame, out double average, out List<double> percentQuestion);
 
-                    // F2 --> Pour afficher uniquement 2 chiffre après la virgule
-                    Console.WriteLine("Nombre de Game : " + nbGame + " // Moyenne totale : " + average.ToString("F2"));
-
-                    for (int i = 0; i < percentQuestion.Count; i++)
+                    if (CheckDisplayStats(Console.ReadKey().KeyChar))
                     {
-                        Console.WriteLine("La moyenne de bonne réponse pour la question " + (i + 1) + " est de " + percentQuestion[i].ToString("F2") + " %");
+                        Console.WriteLine();
+                        DAL.GetStats(out int nbGame, out double average, out List<double> percentQuestion);
+
+                        // F2 --> Pour afficher uniquement 2 chiffre après la virgule
+                        Console.WriteLine("Nombre de Game : " + nbGame + " // Moyenne totale : " + average.ToString("F2"));
+
+                        for (int i = 0; i < percentQuestion.Count; i++)
+                        {
+                            Console.WriteLine("La moyenne de bonne réponse pour la question " + (i + 1) + " est de " + percentQuestion[i].ToString("F2") + " %");
+                        }
                     }
-
-
+                    
                     stats = true;
                 }
                 catch (Exception e)
@@ -264,12 +266,21 @@ namespace Quiz
         /// Renvoie une exception pour réponse non valide
         /// </summary>
         /// <param name="answer">Réponse du joueur pour rejouer ou non</param>
-        private void CheckDisplayStats(char answer)
+        /// <return>bool --> si true on affiche les stats</return>
+        private bool CheckDisplayStats(char answer)
         {
+            bool stat = false;
             if (answer != 'o' && answer != 'n')
             {
                 throw new Exception("Veuillez saisir une réponse valide !");
             }
+
+            if (answer == 'o')
+            {
+                stat = true;
+            }
+
+            return stat;
         }
     }
 }
