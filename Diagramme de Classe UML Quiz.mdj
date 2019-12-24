@@ -253,7 +253,7 @@
 											"top": 208,
 											"width": 548.7802734375,
 											"height": 13,
-											"text": "-CheckDisplayStats(answer: char): void",
+											"text": "-CheckDisplayStats(answer: char): bool",
 											"horizontalAlignment": 0
 										}
 									],
@@ -2747,7 +2747,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFvNvIbbzvyBA8="
 									},
-									"type": "void",
+									"type": "bool",
 									"direction": "return"
 								}
 							]
