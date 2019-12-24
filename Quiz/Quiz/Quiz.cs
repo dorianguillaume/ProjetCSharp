@@ -12,7 +12,7 @@ namespace Quiz
         /// <summary>
         /// Propriété --> Contient la liste des Questions
         /// </summary>
-        public List<Question> Questions { get; set; }
+        public List<Question> Questions { get;}
 
         /// <summary>
         /// Constructeur --> Création du Quiz
@@ -138,7 +138,7 @@ namespace Quiz
         /// Initialise le jeu et demande aux joueurs ses infos
         /// </summary>
         /// <returns>Renvoie un Player avec nom/prenom</returns>
-        public Player InitGame()
+        private Player InitGame()
         {
             bool check = false;
             string firstname = string.Empty;
@@ -184,7 +184,7 @@ namespace Quiz
         /// </summary>
         /// <param name="name">string --> nom et prenom du joueur</param>
         /// <param name="type"string --> Indique si il s'agit du nom ou du prénom pour modifier le message d'erreur></param>
-        public void CheckReadPlayer(string name, string type)
+        private void CheckReadPlayer(string name, string type)
         {
             if (name.Equals(string.Empty))
             {
@@ -208,7 +208,7 @@ namespace Quiz
         /// </summary>
         /// <param name="answer">lettre(s) --> réponse donnée par le joueur</param>
         /// <param name="nbAnswers">int --> nombre de réponse dans la question</param>
-        public void CheckAnswerPlayer(string answer, int nbAnswers)
+        private void CheckAnswerPlayer(string answer, int nbAnswers)
         {
             //Pour vérifier qu'il ne choissise pas une lettre qui ne correspond à une réponse
             //65 code ascii de la lettre A
@@ -251,7 +251,7 @@ namespace Quiz
         /// <param name="goodAnswers">lettre(s) --> Bonne réponse à la questions</param>
         /// <param name="player">Player --> joueur en cours</param>
         /// <param name="idQuestion">int --> Id de la question en cours</param>
-        public void CheckGoodAnswer(string answer, string goodAnswers, Player player, int idQuestion)
+        private void CheckGoodAnswer(string answer, string goodAnswers, Player player, int idQuestion)
         {
             if (answer == goodAnswers)
             {
@@ -264,7 +264,7 @@ namespace Quiz
         /// Renvoie une exception pour réponse non valide
         /// </summary>
         /// <param name="answer">Réponse du joueur pour rejouer ou non</param>
-        public void CheckDisplayStats(char answer)
+        private void CheckDisplayStats(char answer)
         {
             if (answer != 'o' && answer != 'n')
             {

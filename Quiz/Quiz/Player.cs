@@ -11,17 +11,17 @@ namespace Quiz
         /// <summary>
         /// Propriété --> nom du joueur
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get;}
 
         /// <summary>
         /// Propriété --> Prénom du joueur
         /// </summary>
-        public string FirstName { get; set; }
+        public string FirstName { get;}
 
         /// <summary>
         /// Propriété --> Date à laquelle le joueur a effectué son quiz
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime Date { get; }
 
         /// <summary>
         /// Propriété --> Résultat du joueur après avoir effectué le quiz
